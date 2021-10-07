@@ -1,1 +1,1 @@
-![](write/walkTheTreeGif.png)
+![](./walkTheTreeGif.png)

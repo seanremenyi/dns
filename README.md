@@ -23,7 +23,13 @@ First our DNS resolver looks at the “.” and knows this is the root domain th
 
 From https://www.iana.org/domains/root/servers 
 
-.com is known as a top level domain. It is the highest place in the DNS system (after the root) and “example” is actually a subdomain of “.com”
+.com is known as a top level domain. It’s called this because it has the highest place in the DNS system (after the root) and “example” is actually a subdomain of “.com”. Top level domains come in many different types, such as generic (“.com”, “.net”,...), country-code  (“.ca”, “.au”, “.uk”,...), sponsored (“.gov”,..) among others. These top level domains are managed by specific organizations for example “.com” is managed by a company called VeriSign.
+
+With .com’s top level domain name server’s address, our DNS resolver queries it asking “Hey! Do you know the ip address of www.example.com?” Again we will get a No however the response will say “No, however checking my registry, I have found an example.com” and gives us their name server’s IP address.
+
+Finally our DNS resolver queries the example.com NameServer. “Hey! Do you know the IP address of www.example.com?” This time we get the reply “Yes! The IP address is 1.2.3.4”. Because this nameserver contains the record we refer to it as the authoritative nameserver for www.example.com.
+
+The DNS Resolver then passes the information back to the browser and the browser can finally communicate to www.example.com. and we can see the webpage. The whole process is illustrated below.
 
 
 ![](./walkTheTreeGif.png)
